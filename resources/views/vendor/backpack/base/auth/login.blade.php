@@ -11,6 +11,8 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/login') }}">
                         {!! csrf_field() !!}
 
+                        <input type="hidden" name="user_type" value="1">
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">{{ trans('backpack::base.email_address') }}</label>
 

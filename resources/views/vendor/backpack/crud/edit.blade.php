@@ -44,6 +44,19 @@
 				@endif
 		    </div>
 		    <div class="box-body row">
+		    @if($fields['roles_and_permissions']['value'])
+		    	@foreach($fields['roles_and_permissions']['value'] as $rpKey=>$rp)
+		    		@if(count($rp) > 0)
+
+		    			@foreach($rp as $rKey=>$r)
+				    		@if(count($r) > 0 && $rKey != 1)
+				    			<input type="hidden" name="user_type" value="{{$r->id}}" >
+				    		@endif
+				    	@endforeach
+
+		    		@endif
+		    	@endforeach
+		    @endif
 		      <!-- load the view from the application if it exists, otherwise load the one in the package -->
 		      @if(view()->exists('vendor.backpack.crud.form_content'))
 		      	@include('vendor.backpack.crud.form_content', ['fields' => $fields, 'action' => 'edit'])
@@ -62,3 +75,25 @@
 	</div>
 </div>
 @endsection
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$('document').ready(function(){
+
+function Populate(){
+    vals = $('input[name="roles_show[]"]:checked').map(function() {
+        //return this.id;
+        return $(this).data("id")
+    }).get();
+
+    console.log(vals);
+    $('#user_type').val(vals);
+    
+}
+
+$('input[name="roles_show[]"]').on('change', function() {
+    Populate()
+}).change();
+
+});
+
+</script>

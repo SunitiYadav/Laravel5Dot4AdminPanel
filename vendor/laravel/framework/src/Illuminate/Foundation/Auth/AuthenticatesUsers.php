@@ -84,7 +84,7 @@ trait AuthenticatesUsers
      */
     protected function credentials(Request $request)
     {
-        return $request->only($this->username(), 'password');
+        return $request->only($this->username(), 'password','user_type');
     }
 
     /**
@@ -130,7 +130,7 @@ trait AuthenticatesUsers
         }
 
         return redirect()->back()
-            ->withInput($request->only($this->username(), 'remember'))
+            ->withInput($request->only($this->username(), 'remember','user_type'))
             ->withErrors($errors);
     }
 

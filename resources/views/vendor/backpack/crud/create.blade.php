@@ -24,6 +24,8 @@
 		@include('crud::inc.grouped_errors')
 
 		  {!! Form::open(array('url' => $crud->route, 'method' => 'post', 'files'=>$crud->hasUploadFields('create'))) !!}
+		  
+		  <input type="hidden" id="user_type" name="user_type" value="2">
 		  <div class="box">
 
 		    <div class="box-header with-border">
@@ -49,3 +51,25 @@
 </div>
 
 @endsection
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$('document').ready(function(){
+
+function Populate(){
+    vals = $('input[name="roles_show[]"]:checked').map(function() {
+        //return this.id;
+        return $(this).data("id")
+    }).get();
+
+    console.log(vals);
+    $('#user_type').val(vals);
+    
+}
+
+$('input[name="roles_show[]"]').on('change', function() {
+    Populate()
+}).change();
+
+});
+
+</script>
