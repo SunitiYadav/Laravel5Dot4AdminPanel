@@ -44,7 +44,7 @@
 				@endif
 		    </div>
 		    <div class="box-body row">
-		    @if($fields['roles_and_permissions']['value'])
+		    @if(isset($fields['roles_and_permissions']))
 		    	@foreach($fields['roles_and_permissions']['value'] as $rpKey=>$rp)
 		    		@if(count($rp) > 0)
 

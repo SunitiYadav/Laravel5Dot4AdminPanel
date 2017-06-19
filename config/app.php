@@ -184,6 +184,7 @@ return [
         * Other Service Providers...
         */
 
+        DougSisk\CountryState\CountryStateServiceProvider::class,
     ],
 
     /*

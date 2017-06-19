@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Venturecraft\\Revisionable' => array($vendorDir . '/venturecraft/revisionable/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
+    'Phine\\Exception' => array($vendorDir . '/phine/exception/src/lib'),
+    'Phine\\Country' => array($vendorDir . '/phine/country/src/lib'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'LiveControl\\EloquentDataTable' => array($vendorDir . '/livecontrol/eloquent-datatable/src'),

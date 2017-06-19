@@ -33,6 +33,15 @@
           <li><a href="{{ url(config('backpack.base.route_prefix').'/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix').'/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
 
+          <!-- Country-State-City -->
+          <li class="nav-item">
+            <a href="{{url('admin/CountryStateCity')}}" class="nav-link nav-toggle">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <span class="title">Country-State-City</span>
+                <span class="arrow"></span>
+            </a>
+          </li>
+
           <!-- Users, Roles Permissions -->
           <li class="treeview">
             <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>

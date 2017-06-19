@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::group(['namespace'=>'Admin','prefix'=>'admin'],function(){
+
+	Route::get('/CountryStateCity','AdminController@index');
+	Route::get('/get-state-list','AdminController@getStateList');
+	Route::get('/get-city-list','AdminController@getCityList');
+
+});
